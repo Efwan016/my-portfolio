@@ -40,3 +40,11 @@ img.addEventListener('click', () => {
 zoomModal.addEventListener('click', () => {
     zoomModal.style.display = 'none';
 });
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+}
+
