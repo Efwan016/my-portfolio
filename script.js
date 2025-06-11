@@ -1,43 +1,55 @@
 // Modal Contact Us
 const contactModal = document.getElementById("contactModal");
 
-function openModal() {
-    contactModal.style.display = "block";
+function openContactModal() {
+  contactModal.style.display = "flex";
 }
 
-function closeModal() {
+function closeContactModal() {
+  contactModal.style.display = "none";
+}
+
+window.addEventListener("click", function (event) {
+  if (event.target == contactModal) {
     contactModal.style.display = "none";
-}
-
-window.onclick = function(event) {
-    if (event.target == contactModal) {
-        contactModal.style.display = "none";
-    }
-}
+  }
+});
 
 // Tombol open modal
-document.querySelector(".button.hire").addEventListener("click", openModal);
-
+document.querySelector(".button.hire").addEventListener("click", openContactModal);
 
 // Mode Day/Night
 function toggleMode() {
-    document.body.classList.toggle('dark-mode');
-    const modeBtn = document.querySelector('.mode-toggle');
-    modeBtn.textContent = document.body.classList.contains('dark-mode') ? "💡" : "💡";
+  document.body.classList.toggle("dark-mode");
+  const modeBtn = document.querySelector(".mode-toggle");
+  modeBtn.textContent = "💡"; // Simbol tetap, karena kamu minta pakai lampu
 }
 
-
 // Zoom Gambar Profil
-const zoomModal = document.getElementById('modal');
-const modalImg = document.getElementById('modal-img');
-const img = document.getElementById('profileImg');
+const zoomModal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+const img = document.getElementById("profileImg");
 
-img.addEventListener('click', () => {
-    zoomModal.style.display = 'flex';
-    modalImg.src = img.src;
+img.addEventListener("click", () => {
+  zoomModal.style.display = "flex";
+  modalImg.src = img.src;
 });
 
-zoomModal.addEventListener('click', () => {
-    zoomModal.style.display = 'none';
+zoomModal.addEventListener("click", () => {
+  zoomModal.style.display = "none";
 });
 
+const formModal = document.getElementById("formModal");
+function openFormModal() {
+  formModal.style.display = "flex";
+}
+function closeFormModal() {
+  formModal.style.display = "none";
+}
+window.addEventListener("click", function (event) {
+  if (event.target == contactModal) {
+    contactModal.style.display = "none";
+  } else if (event.target == formModal) {
+    formModal.style.display = "none";
+  }
+});
